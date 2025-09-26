@@ -62,6 +62,43 @@ public class MusicOrganizer
         }
     }
     
+    public void listWithIndex()
+    {
+       for(int i = 0; i < files.size(); i++) {
+            System.out.println(i + ":" + files.get(i));
+        } 
+    }
+    
+    /**
+     * List the names of files matching the given search string
+     * @param searchString The String to match.
+     */
+    public void listMatching(String searchString)
+    {
+        for(String filename : files) {
+            if(filename.contains(searchString)) {
+                //A match
+                System.out.println(filename);
+            }else{
+                System.out.println("No matching songs");
+            }
+            }
+        }
+    
+    public void playArtistSamples(String artist)
+    {
+        boolean found = false;
+        for(String filename : files) {
+            if(filename.contains(artist)) {
+                System.out.println(filename);
+                player.playSample(filename);
+                found = true;
+            }else{
+                System.out.println("No songs found");
+            }
+        }
+    }
+        
     /**
      * Remove a file from the collection.
      * @param index The index of the file to be removed.
