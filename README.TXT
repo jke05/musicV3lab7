@@ -15,4 +15,9 @@
     
 }
 Lab 7 Part 2:
-23. 
+23. public void listWithIndex()
+    {
+       for(int i = 0; i < files.size(); i++) {
+            System.out.println(i + ":" + files.get(i));
+        } 
+    }
